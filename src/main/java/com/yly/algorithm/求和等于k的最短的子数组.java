@@ -3,6 +3,8 @@ package com.yly.algorithm;
 import java.util.HashMap;
 
 public class 求和等于k的最短的子数组 {
+
+    // 时间复杂度O(n)
     public int subarraySumEqualsKII(int[] nums, int k) {
         int[] prefixSum = getPrefixSum(nums);
 
