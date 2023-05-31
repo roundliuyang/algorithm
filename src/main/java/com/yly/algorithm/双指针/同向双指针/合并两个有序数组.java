@@ -1,4 +1,4 @@
-package com.yly.algorithm.同向双指针;
+package com.yly.algorithm.双指针.同向双指针;
 
 public class 合并两个有序数组 {
 	 public void merge(int[] nums1, int m, int[] nums2, int n) {

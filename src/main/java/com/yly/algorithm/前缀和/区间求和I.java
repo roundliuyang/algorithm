@@ -1,7 +1,8 @@
-package com.yly.algorithm.前缀;
+package com.yly.algorithm.前缀和;
 
 
 /**
+ * todo
  * 给出一个整数数组 A，和一组询问 queries。
  * 每个询问由两个整数 start 和 end 构成。
  * 对于每一个询问，求出 A[start] + A[start + 1] + … + A[end – 1] + A[end]
