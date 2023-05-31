@@ -1,4 +1,4 @@
-package com.yly.algorithm;
+package com.yly.algorithm.leetcode;
 
 import java.util.HashMap;
 
