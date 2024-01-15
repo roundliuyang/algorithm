@@ -5,6 +5,11 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
+ *
+ * 请你设计一个数据结构，支持以下两种操作：
+ * • void addEdge(int a, int b)：在编号为a的点和编号为 b的点之间链接一条边。保证不会出现自环和重边。
+ * • bool isValidTree()：判断当前已经出现的点和边是否能形成一棵树。
+ *
  * 一个图是树的充要条件：
  * 1、图上有n个点、并且仅有n-1条边
  * 2、n个点是连通的（属于同一个连通块） <=====> 等价于有环无环
