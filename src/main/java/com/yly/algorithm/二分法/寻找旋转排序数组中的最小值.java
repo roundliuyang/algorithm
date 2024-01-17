@@ -1,4 +1,4 @@
-package com.yly.algorithm.二分答案;
+package com.yly.algorithm.二分法;
 
 public class 寻找旋转排序数组中的最小值 {
     /*

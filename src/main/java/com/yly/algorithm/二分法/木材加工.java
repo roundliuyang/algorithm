@@ -1,4 +1,4 @@
-package com.yly.algorithm.二分答案;
+package com.yly.algorithm.二分法;
 
 public class 木材加工 {
     /*
