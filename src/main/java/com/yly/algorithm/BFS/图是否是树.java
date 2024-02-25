@@ -1,4 +1,4 @@
-package com.yly.algorithm.BFS.基础;
+package com.yly.algorithm.BFS;
 
 import java.util.HashMap;
 import java.util.HashSet;

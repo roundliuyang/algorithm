@@ -39,7 +39,7 @@ public class 最小覆盖子串 {
         int start = 0;
         int subStringLength = Integer.MAX_VALUE;
 
-        for (int i = 0; i < n; i++) {
+        for (int i = 0; i < n; i++) {               // 可以使用while 循环替换for循环
             // j 指针前移条件； j< n 并且匹配数量不足
             while (j < n && matchedChars < targetCounter.size()) {
                 // +1 后恰好相等，匹配数量加1
