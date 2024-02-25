@@ -7,10 +7,32 @@ import java.util.Stack;
  * 输入: ")()())"
  * 输出: 4
  * 解释: 最长有效括号子串为 "()()"
+ * <p>
+ * "(()()))"
+ * 6
+ * <p>
+ * ")()()))"
+ * 4
  */
 public class 最长有效括号 {
     public int longestValidParentheses(String s) {
+        int n = s.length();
+        int maxans = 0;
         Stack<Integer> stack = new Stack<>();
-        return 1;
+        stack.push(-1);
+
+        for (int i = 0; i < n; i++) {
+            if (s.charAt(i) == '(') {
+                stack.push(i);
+            } else {
+                stack.pop();
+                if (stack.isEmpty()) {
+                    stack.push(i);
+                } else {
+                    maxans = Math.max(maxans, i - stack.peek());
+                }
+            }
+        }
+        return maxans;
     }
 }
