@@ -2,6 +2,8 @@ package com.yly.algorithm.链表;
 /**
  * 和k个链表一组翻转一模一样
  * 将给定的链表中每两个相邻的节点交换一次，返回链表的头指针
+ * 
+ * a->b->c->d 变成 b->a->d>c 
  */
 public class 两两交换链表中的节点{
 	public ListNode swapPairs(ListNode head) {
