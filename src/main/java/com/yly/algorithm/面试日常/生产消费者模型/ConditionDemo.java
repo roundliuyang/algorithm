@@ -9,31 +9,47 @@ import java.util.concurrent.locks.ReentrantLock;
  * 下面是用Condition实现的生产者消费者问题
  */
 public class ConditionDemo {
-    private LinkedList<String> buffer;    //容器
-    private int maxSize ;           //容器最大
+    /**
+     * 容器
+     */
+    private LinkedList<String> buffer;
+    /**
+     * 容器的容量
+     */
+    private int maxSize ;
+    /**
+     * 锁
+     */
     private Lock lock;
-    private Condition fullCondition;
-    private Condition notFullCondition;
+    /**
+     * 缓冲区不为空的条件
+     */
+    private Condition bufferNotEmpty;
+    /**
+     * 缓冲区不满的条件
+     */
+    private Condition bufferNotFull;
 
     ConditionDemo(int maxSize){
         this.maxSize = maxSize;
         buffer = new LinkedList<String>();
         lock = new ReentrantLock();
-        fullCondition = lock.newCondition();
-        notFullCondition = lock.newCondition();
+        bufferNotEmpty = lock.newCondition();
+        bufferNotFull = lock.newCondition();
     }
 
     public void set(String string) throws InterruptedException {
-        lock.lock();    //获取锁
+        // 获取锁
+        lock.lock();   
         try {
             while (maxSize == buffer.size()){
-                notFullCondition.await();       //满了，添加的线程进入等待状态
+                bufferNotFull.await();       // 缓冲区满了，等待空间变得可用
             }
 
             buffer.add(string);
-            fullCondition.signal();
+            bufferNotEmpty.signal();
         } finally {
-            lock.unlock();      //记得释放锁
+            lock.unlock();
         }
     }
 
@@ -42,10 +58,10 @@ public class ConditionDemo {
         lock.lock();
         try {
             while (buffer.size() == 0){
-                fullCondition.await();
+                bufferNotEmpty.await();
             }
             string = buffer.poll();
-            notFullCondition.signal();
+            bufferNotFull.signal();
         } finally {
             lock.unlock();
         }
