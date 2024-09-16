@@ -1,6 +1,8 @@
-package com.yly.algorithm.DFS;
+package com.yly.algorithm.DFS.二叉树是否为镜像;
 
-class 二叉树是否为镜像 {
+import com.yly.algorithm.DFS.TreeNode;
+
+public class 二叉树是否为镜像 {
 
     public boolean isSymmetric(TreeNode root) {
         return check(root, root);

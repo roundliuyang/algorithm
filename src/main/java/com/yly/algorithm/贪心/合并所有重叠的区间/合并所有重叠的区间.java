@@ -1,4 +1,4 @@
-package com.yly.algorithm.贪心;
+package com.yly.algorithm.贪心.合并所有重叠的区间;
 
 import java.util.ArrayList;
 import java.util.Arrays;
@@ -6,15 +6,7 @@ import java.util.Comparator;
 import java.util.List;
 import java.util.concurrent.atomic.AtomicInteger;
 
-/*
-    给出若干闭合区间，合并所有重叠的部分。
-    输入：[(1,3), (2,6), (8,10), (15,18)]
-    输出：[(1,6), (8,10), (15,18)]
 
-    解法一：贪心
-    将intervals数组排序，左边界越小越优先前一个区间的右边界在后一个区间的左边界之后，则合并两个区间
-    前一个区间的右边界在后一个区间的左边界之后 == 两区间相交
- */
 public class 合并所有重叠的区间 {
     public int[][] merge(int[][] intervals) {
         int len = intervals.length;
@@ -37,7 +29,7 @@ public class 合并所有重叠的区间 {
             if (curInterval[0] > peek[1]) {
                 res.add(curInterval);
             } else {
-                // 注意，这里应该取最大
+                // 这里应该取最大
                 peek[1] = Math.max(curInterval[1], peek[1]);
             }
         }

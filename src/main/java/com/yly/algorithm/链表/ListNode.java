@@ -1,10 +1,10 @@
 package com.yly.algorithm.链表;
 
-class ListNode {
-    int val;
-    ListNode next;
+public class ListNode {
+    public int val;
+    public ListNode next;
 
-    ListNode(int x) {
+    public ListNode(int x) {
         val = x;
     }
 }

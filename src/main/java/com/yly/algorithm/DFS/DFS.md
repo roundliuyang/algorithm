@@ -47,3 +47,28 @@
 
 典型例子: 找连通的节点
 
+
+
+## DFS 模板
+
+我们可以使用以下模板简单地遍历树/图。
+
+
+
+### 二叉树上的DFS
+
+```java
+// 深度优先搜索 (DFS)
+public void dfs(TreeNode root) {
+    if (root == null) {
+        return;
+    }
+    // 处理当前节点
+    doSomething(root);
+    // 递归处理左子树
+    dfs(root.left);
+    // 递归处理右子树
+    dfs(root.right);
+}
+```
+

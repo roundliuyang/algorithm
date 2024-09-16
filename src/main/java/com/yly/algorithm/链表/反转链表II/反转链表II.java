@@ -1,19 +1,8 @@
-package com.yly.algorithm.链表;
+package com.yly.algorithm.链表.反转链表II;
 
-/**
- * leetcode 92
- * 给你单链表的头指针 head 和两个整数 left 和 right ，其中 left <= right 。请你反转从位置 left 到位置 right 的链表节点，返回 反转后的链表 。
- * 输入：head = [1,2,3,4,5], left = 2, right = 4
- * 输出：[1,4,3,2,5]
- * 示例图
- *  1  2  3  4  5
- *        ║
- *        ▼
- *  1  4  3  2  5
- *  
- *  思路
- *  left到right之间的node反转后，如何让1指向4,2指向5是关键中的关键，也就是有一点绕而已
- */
+import com.yly.algorithm.链表.ListNode;
+
+
 public class 反转链表II {
     public ListNode reverseBetween(ListNode head, int left, int right) {
         if (head == null || left == right) {
