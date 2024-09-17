@@ -1,4 +1,4 @@
-package com.yly.algorithm.双指针.同向双指针;
+package com.yly.algorithm.双指针.同向双指针.至少K个不同字符的子串的数量;
 
 
 import java.util.HashMap;
