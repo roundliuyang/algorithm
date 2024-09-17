@@ -1,4 +1,4 @@
-package com.yly.algorithm.leetcode;
+package com.yly.algorithm.leetcode.twosum;
 
 public class twosum {
     public int[] twoSum(int[] nums, int target) {

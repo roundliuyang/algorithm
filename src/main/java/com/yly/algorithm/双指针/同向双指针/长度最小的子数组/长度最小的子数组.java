@@ -1,11 +1,6 @@
-package com.yly.algorithm.双指针.同向双指针;
+package com.yly.algorithm.双指针.同向双指针.长度最小的子数组;
 
 
-/*
-     LeetCode 209
-    给定一个含有n个正整数的数组和一个正整数 s 。
-    找出该数组中满足其和 ≥ s 的长度最小的 连续子数组[numsl, numsl+1, ..., numsr-1, numsr] ，并返回其长度。如果不存在符合条件的子数组，返回 0 。
- */
 public class 长度最小的子数组 {
     // 暴力解法(注意边界)  时间复杂度O(n^3),空间复杂度 O(1)
     public int minimumSize(int[] nums, int s) {
@@ -151,15 +146,9 @@ public class 长度最小的子数组 {
     }
 
 
-    /*
-        方案四： 同向双指针
-        同向双指针 （时间复杂度为 O(2 * n) = O(n)，空间复杂度 O(1) ）
-        遍历每一个左指针 i,找到满足 sum(a[i],…,a[j]) >= s 的右指针 j,更新最短的子数组长度
-
-        复杂度分析
-        对于一个数字nums[i]，每个指针只会遍历一次,所以时间复杂度为 O(2 * n) = O(n),空间复杂度 O(1)
+    /**
+     * 方案四： 同向双指针
      */
-
     public int minimumSize5(int[] nums, int s) {
         if (nums == null || nums.length == 0) {
             return 0;
@@ -167,21 +156,21 @@ public class 长度最小的子数组 {
         int n = nums.length;
         int minLength = Integer.MAX_VALUE;
         int sum = 0;
-        int j= 0;
-        for(int i =0; i < n;i++){
-            while(j < n && sum < s){
+        int j = 0;
+        for (int i = 0; i < n; i++) {
+            while (j < n && sum < s) {
                 sum += nums[j];
                 j++;
             }
-            if(sum >= s){
-                minLength = Math.min(minLength, j-i);
+            if (sum >= s) {
+                minLength = Math.min(minLength, j - i);
             }
             sum -= nums[i];
         }
-        if(minLength == Integer.MAX_VALUE){
-            return  0;
+        if (minLength == Integer.MAX_VALUE) {
+            return 0;
         }
-        return  minLength;
+        return minLength;
     }
 
 

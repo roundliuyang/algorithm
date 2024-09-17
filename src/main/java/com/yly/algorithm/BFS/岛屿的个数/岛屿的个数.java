@@ -1,4 +1,4 @@
-package com.yly.algorithm.BFS;
+package com.yly.algorithm.BFS.岛屿的个数;
 
 import java.util.HashSet;
 import java.util.LinkedList;

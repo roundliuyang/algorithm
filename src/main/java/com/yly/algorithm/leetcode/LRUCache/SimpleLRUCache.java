@@ -1,4 +1,4 @@
-package com.yly.algorithm.leetcode;
+package com.yly.algorithm.leetcode.LRUCache;
 
 import java.util.LinkedHashMap;
 import java.util.Map;

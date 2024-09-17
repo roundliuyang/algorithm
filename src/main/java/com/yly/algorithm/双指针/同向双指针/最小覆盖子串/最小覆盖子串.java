@@ -1,22 +1,9 @@
-package com.yly.algorithm.双指针.同向双指针;
+package com.yly.algorithm.双指针.同向双指针.最小覆盖子串;
 
 import java.util.HashMap;
 
-/*  leetcode:76
-    给定两个字符串 source 和 target ,求 source 中最短的包含 target 中每一个字符的子串
-    • 输入: source = "abc"， target = "ac"
-    • 输出: "abc"
-    • 输入: source = "abcdadcda"， target = "accb"
-    • 输出: "bcdadc"
- */
 public class 最小覆盖子串 {
-    /*
-        时空复杂度
-        时间复杂度：O(n + m)
-        空间复杂度：O(|target| + |source|)
-        n, m 为两串长度
-        |target|，|source| 为两串字符集大小
-    */
+
     public String minWindow(String source, String target) {
         if (target.length() == 0 || source.length() == 0) {
             return "";
@@ -24,13 +11,12 @@ public class 最小覆盖子串 {
         int m = target.length();
         int n = source.length();
         // targetCounter 存放target 中的每种字符数量
-        // subCounter 存放双指针对应子串中的每种字符数量
         HashMap<Character, Integer> targetCounter = new HashMap<>();
+        // subCounter 存放双指针对应子串中的每种字符数量
         HashMap<Character, Integer> subCounter = new HashMap<>();
 
         for (int i = 0; i < m; i++) {
-            Integer numOfThisChar = targetCounter.getOrDefault(target.charAt(i), 0);
-            targetCounter.put(target.charAt(i), numOfThisChar+1);
+            targetCounter.put(target.charAt(i), targetCounter.getOrDefault(target.charAt(i), 0) + 1);
         }
 
         int j = 0;
@@ -45,8 +31,7 @@ public class 最小覆盖子串 {
                 // +1 后恰好相等，匹配数量加1
                 Integer numOfThisChar = subCounter.getOrDefault(source.charAt(j), 0);
                 subCounter.put(source.charAt(j), numOfThisChar + 1);
-
-                // java 的 HashMap 中存放的是 Integer 对象，应使用 equals 比较值
+                
                 if (subCounter.get(source.charAt(j)).equals(targetCounter.get(source.charAt(j)))) {
                     matchedChars++;
                 }
@@ -61,9 +46,7 @@ public class 最小覆盖子串 {
                 }
             }
             // -1 后恰好差一个，匹配数量-1
-            Integer numOfThisChar = subCounter.getOrDefault(source.charAt(i), 0);
-            subCounter.put(source.charAt(i), numOfThisChar - 1);
-            // java 的HashMap 中存放的是 Integer 对象，应使用 equals 比较值
+            subCounter.put(source.charAt(i), subCounter.getOrDefault(source.charAt(i), 0) - 1);
             if (subCounter.get(source.charAt(i)).equals(targetCounter.getOrDefault(source.charAt(i), 0) - 1)) {
                 matchedChars--;
             }
@@ -74,6 +57,5 @@ public class 最小覆盖子串 {
             return "";
         }
         return source.substring(start, start + subStringLength);
-
     }
 }

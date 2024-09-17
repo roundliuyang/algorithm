@@ -1,4 +1,4 @@
-package com.yly.algorithm.leetcode;
+package com.yly.algorithm.前缀和.求和等于k的最短的子数组;
 
 import java.util.HashMap;
 
