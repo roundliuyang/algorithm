@@ -25,7 +25,10 @@ public class 二叉树的后续遍历 {
     }
 
 
-    // 迭代方式（其实就是使用堆栈模拟递归的遍历）
+    /**
+     * 迭代方式（其实就是使用堆栈模拟递归的遍历）
+     * 思路：后序遍历的root节点为最大值，而首先要遍历root节点，所以肯定使用addFirst()方法。
+     */
     public List<Integer> postorderTraversal2(TreeNode root) {
         LinkedList<TreeNode> stack = new LinkedList<>();
         LinkedList<Integer> output = new LinkedList<>();

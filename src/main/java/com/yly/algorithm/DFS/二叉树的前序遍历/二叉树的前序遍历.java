@@ -24,7 +24,10 @@ public class 二叉树的前序遍历 {
         helper(root.right, list);
     }
 
-    // 迭代方式（其实就是使用堆栈模拟递归的遍历）
+    /**
+     * 迭代方式（其实就是使用堆栈模拟递归的遍历）
+     * 思路：前序遍历的root节点为最小值，而首先要遍历root节点，然后从栈顶取出直接 output.add()就好了
+     */
     public List<Integer> preorderTraversal2(TreeNode root) {
         LinkedList<TreeNode> stack = new LinkedList<>();
         LinkedList<Integer> output = new LinkedList<>();

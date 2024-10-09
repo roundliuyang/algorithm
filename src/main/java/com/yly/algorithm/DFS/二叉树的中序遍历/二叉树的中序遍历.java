@@ -24,7 +24,10 @@ public class 二叉树的中序遍历 {
         getAns(node.right, ans);
     }
 
-    // 迭代方式（其实就是使用堆栈模拟递归的遍历）
+    /**
+     * 迭代方式（其实就是使用堆栈模拟递归的遍历）
+     * 好吧，中序遍历有点怪
+     */
     public List<Integer> inorderTraversal2(TreeNode root) {
         LinkedList<TreeNode> stack = new LinkedList<>();
         LinkedList<Integer> output = new LinkedList<>();
