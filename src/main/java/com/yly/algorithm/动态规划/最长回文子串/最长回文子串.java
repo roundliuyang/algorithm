@@ -1,7 +1,6 @@
-package com.yly.test;
+package com.yly.algorithm.动态规划.最长回文子串;
 
-public class Test {
-
+public class 最长回文子串 {
     public String longestPalindrome(String s) {
         int len = s.length();
         if (len < 2) {
