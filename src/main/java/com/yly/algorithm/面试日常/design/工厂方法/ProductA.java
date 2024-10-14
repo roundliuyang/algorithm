@@ -5,7 +5,7 @@ package com.yly.algorithm.面试日常.design.工厂方法;
  */
 public class ProductA extends Product {
     @Override
-    public void method() {
+    public void print() {
         System.out.println("I am A");
     }
 }
