@@ -1,6 +1,6 @@
-package com.yly.algorithm.leetcode.twosum;
+package com.yly.algorithm.leetcode.两数之和;
 
-public class twosum {
+public class 两数之和 {
     public int[] twoSum(int[] nums, int target) {
         int[] ans = new int[2];
         for (int i = 0; i < nums.length; i++) {
