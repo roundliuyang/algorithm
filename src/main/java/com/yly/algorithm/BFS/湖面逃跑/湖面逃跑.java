@@ -1,4 +1,4 @@
-package com.yly.algorithm.BFS;
+package com.yly.algorithm.BFS.湖面逃跑;
 
 
 import java.util.LinkedList;
