@@ -1,4 +1,4 @@
-package com.yly.algorithm.leetcode.字符串中连续重复次数最多的字符;
+package com.yly.algorithm.leetcode.字符串.字符串中连续重复次数最多的字符;
 
 public class 字符串中连续重复次数最多的字符 {
     public static void test(String s) {

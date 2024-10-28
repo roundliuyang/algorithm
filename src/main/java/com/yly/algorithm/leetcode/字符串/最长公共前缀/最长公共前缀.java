@@ -1,4 +1,4 @@
-package com.yly.algorithm.字符串.最长公共前缀;
+package com.yly.algorithm.leetcode.字符串.最长公共前缀;
 
 public class 最长公共前缀 {
     public String longestCommonPrefix(String[] strs) {
