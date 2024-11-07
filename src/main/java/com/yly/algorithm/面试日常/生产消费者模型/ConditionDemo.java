@@ -16,7 +16,7 @@ public class ConditionDemo {
     /**
      * 容器的容量
      */
-    private int maxSize ;
+    private int maxSize;
     /**
      * 锁
      */
@@ -30,7 +30,7 @@ public class ConditionDemo {
      */
     private Condition bufferNotFull;
 
-    ConditionDemo(int maxSize){
+    public ConditionDemo(int maxSize) {
         this.maxSize = maxSize;
         buffer = new LinkedList<String>();
         lock = new ReentrantLock();
@@ -40,9 +40,9 @@ public class ConditionDemo {
 
     public void set(String string) throws InterruptedException {
         // 获取锁
-        lock.lock();   
+        lock.lock();
         try {
-            while (maxSize == buffer.size()){
+            while (maxSize == buffer.size()) {
                 bufferNotFull.await();       // 缓冲区满了，等待空间变得可用
             }
 
@@ -57,7 +57,7 @@ public class ConditionDemo {
         String string;
         lock.lock();
         try {
-            while (buffer.size() == 0){
+            while (buffer.size() == 0) {
                 bufferNotEmpty.await();
             }
             string = buffer.poll();
