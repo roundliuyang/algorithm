@@ -8,20 +8,21 @@ import com.yly.algorithm.链表.ListNode;
  */
 public class 链表中倒数第k个结点 {
     public ListNode FindKthToTail(ListNode head, int k) {
-        int s;
+        // len 为 链表的长度
+        int len = 0;
         ListNode node = head;
-        ListNode m = head;
-        for (s = 0; m != null; s++){
-            m = m.next;
+        ListNode tmp = head;
+        for (; tmp != null; len++){
+            tmp = tmp.next;
         }
-        if (k < s) {
-            for (int i = 0; i < s - k; i++) {
+        if (len == k){
+            return head;
+        } else if(k < len){
+            for(int i = 0; i < len - k; i++){
                 node = node.next;
             }
             return node;
-        } else if (k == s) {
-            return head;
-        } else {
+        }else {
             return null;
         }
     }
